@@ -7,7 +7,7 @@ void draw(){
   //println(sum);
   //println(sum2);
   println(addNumbers(5,5));
-  println(addNumbers(int(random, 6));
+  println(addNumbers(int(random(0,3)), 6));
 }
 
 int addNumbers(int a, int b){
