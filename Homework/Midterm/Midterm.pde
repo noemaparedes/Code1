@@ -3,6 +3,7 @@ int y;
 int x2, y2;
 int x3, y3;
 int x4, y4;
+int x5, y5;
 int size; 
 float dist;
 float l, h;
@@ -20,6 +21,7 @@ int[] ePosX = new int[numE];
 int[] ePosY = new int[numE];
 color[] baseColor = new int[numE];
 
+
 void setup(){
   size(800, 700); 
   x = width/2; 
@@ -30,10 +32,13 @@ void setup(){
   y3 = 378;
   x4 = 410;
   y4 = 300;
+  x5 = 300;
+  y5 = 450;
   l = 35;
   h = 35; 
   size = 100; 
   smooth();
+
   
     for(int i = 0; i<numE; i++){
     ePosX[i] = int(random(0, width));
@@ -56,13 +61,18 @@ void setup(){
 }
 
 void draw(){
+  
+   //textFont(font);
     
   if(buttonClicked){
     background(0); 
     textSize(32);
-    String s = "click the red square.";
-    fill(0, 0, 255);
+    String s = "Click the                  .";
+    fill(0, 150, 0);
     text(s, 25, 50, 70);
+    String z = "red square";
+    fill(0, 0, 255);
+    text(z, 171, 50, 70);
  
  //set speed of ellipses
   for(int i= 0; i<numE; i++){
@@ -79,8 +89,12 @@ void draw(){
        eSpeedY[i] = eSpeedY[i]*-1;
      }
      
-     rect(x2, y2, 35, 35);
+     fill(0, 0, 255);
+     rect(x5, y5, 35, 35);
+     
      fill(150, 0, 0);
+     rect(x2, y2, 35, 35);
+     
      
    }
   
@@ -91,7 +105,7 @@ void draw(){
   
   }else{
     background(255); 
-    String s = "click the button to get started.";
+    String s = "Click the button to get started.";
     fill(50);
     text(s, 320, 250, 70);
   }
@@ -138,13 +152,10 @@ void draw(){
   }
    if (buttonClicked4){
     background(255);
-    textSize(24);
-    String s = "Wow! You have sharp eyes.";
-    fill(50);
-    text(s, 245, 215, 50);
+    textSize(32);
     String a = "Congrats! YOU WON!";
     fill(50);
-    text(a, 280, 300, 50);
+    text(a, 225,375, 50);
   }else{
     
   }
