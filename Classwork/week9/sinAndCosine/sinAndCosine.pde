@@ -1,21 +1,27 @@
-PVector position;
-int r = 100;
 
-void setup(){
+
+float r=100;
+float theta= 0;
+
+void setup (){
   size(500, 500);
   background(0);
+  smooth();
   
-  position = new PVector(0,0);
 }
 
-void draw(){
-  position.x = r*cos(frameCount) + width/2;
-  position.y = r*sin(frameCount) + height/2;
+void draw() {
+  fill(0,10); 
+  rect(0, 0, width, height);
   
-  ellipse(position.x, position.y, 10, 10);
-  r += 1;
-  if(r > width/2){
-   background(0);
-   r=0;
-  }
+  //orbit
+  float x = r*cos(theta); 
+  float y = 2*r*sin(theta); 
+  
+  //circle
+  fill(0, 255, 255);
+  noStroke();
+  ellipse(x+width/2, y+height/2, 20, 20);
+  
+  theta +=.01; 
 }

@@ -1,18 +1,17 @@
-//Sketch 2: Class and ArrayList of objects
-//Inspired from Daniel Shiffman's Simple Particle System with ArrayList
-
-//declare an arraylist of particles
 ArrayList<Particle> particles;
+float r, b, g;
  
 void setup() {
   size(800, 800);
   particles = new ArrayList<Particle>();
-  smooth(); //smoothes the edges of any shape
+  smooth();
 }
  
 void draw() {
- 
-  background(255);
+  r = map(mouseX, 0, width, 0, 25);
+  b = map(mouseY, 0, height, 0, 25);
+  g = map(mouseY, 0, height, 0, 25);
+  background(r, g, b);
 
   for (int i=0; i<particles.size(); i++) {
     Particle p = particles.get(i); //get the Particle at the ith position from the array list and perform the following functions
@@ -108,9 +107,9 @@ class Particle {
     //making color depend on the speed
     c = (int) (abs(xspeed) + abs(yspeed))*10 + 30;
     
-    r = 250 - c;
+    r = 205 - c;
     g = c;
-    b = c + 40;
+    b = c + 80;
     
     noStroke();
     fill(r,g,b);
