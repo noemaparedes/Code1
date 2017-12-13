@@ -1,46 +1,59 @@
 //number of screens
-  int num = 2; 
+  int num = 17; 
   
-  PImage scenes[] = new PImage[num]; 
-  int x,y;
+  PImage scenes[] = new PImage[num];
+  //For buttons
+  int x,y, a,b, c,d, e,f, g,h, k,l, m,n, o,p, q,r, s,t, u,v, w,z;
   boolean buttonClicked; 
   float dist;
-  int sceneNumber = 0; 
+  int sceneNumber = 0;
+  
 void setup(){
   size(800,700);
   
-  //cloud1 = loadImage("Scene0.png");
-  //cloud2 = loadImage("Scene1.png");
   for(int i = 0; i<num; i++){
     scenes[i] = loadImage("Screen" + (i) + ".png"); 
     scenes[i].resize(800, 700); 
   }
   
- x=337;
- y= 400;
+  
+//BUTTONS
+ //CLOUD
+ x = 337;
+ y = 400;
+ a = 337;
+ b = 200;
+ c = 337;
+ d = 600;
+ e = 550;
+ f = 630;
+ //FRUITS
+ g = 337;
+ h = 195;
+ k = 337;
+ l = 325;
+ m = 337;
+ n = 500;
+ //CIRCLES
+ o = 185;
+ p = 360;
+ q = 475;
+ r = 360;
+ //DOTS
+ s = 180;
+ t = 675;
+ u = 337;
+ v = 678;
+ w = 573;
+ z = 653;
+
 }
 
 void draw() {
-    //if(buttonClicked){
-    //    image(scenes[1], 0, 0);
-    //    cloud2.resize(800, 700);
-    //  }else{
-    //    image(scenes[0], 0, 0);
-    //    cloud1.resize(800, 700);
-    //  }
-  displayScene(sceneNumber); 
-  
-  //fill(255, 0, 0); 
-  //rect(x, y, 400, 100); 
-  //noStroke();
-  //noFill();
+  displayScene(sceneNumber);
 }
 
 void mousePressed(){
-  //if(calcDistance(x,y) <= 100){
-  //  buttonClicked = !buttonClicked; 
-  //}
-  
   scenePath(); 
 }
 
